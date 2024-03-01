@@ -7,12 +7,12 @@ from reasoners.benchmark import GSM8KEvaluator
 from reasoners import LanguageModel, Reasoner, SearchAlgorithm
 from reasoners.algorithm import MCTS, MCTSNode, MCTSAggregation
 
-from world_model import GSM8kWorldModel, GSM8kState, GSM8kAction, GSM8kPromptDict
+from world_model import GSM8kWorldModel, GSM8kState, GSM8kAction, GSM8kPromptDict, GSM8kExample
 from search_config import GSM8kConfig, GSM8kUsefulPrompt
 import utils
 
 
-def node_visualizer(x: MCTSNode[GSM8kState, GSM8kAction]):
+def node_visualizer(x: MCTSNode[GSM8kState, GSM8kAction, GSM8kExample]):
     if not x.state:
         return {}
     return {"question": x.state[-1].sub_question, "answer": x.state[-1].sub_answer}

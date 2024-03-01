@@ -56,4 +56,7 @@ def cot_sc_extractor(algo_output, sc=True):
     answers = [retrieve_answer(x) for x in algo_output]
     answers = [x for x in answers if x is not None]
     counter = Counter(answers)
-    return counter.most_common(1)[0][0]
+    try:
+        return counter.most_common(1)[0][0]
+    except:
+        return -9999999999

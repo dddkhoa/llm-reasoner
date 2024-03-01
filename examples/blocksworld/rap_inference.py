@@ -110,7 +110,7 @@ if __name__ == '__main__':
                lm_plan_file=lm_plan_file, **kwargs)
 
     def llama_hf_main(
-            llama_path = '/data/haotian/RAP_tune/Llama-2-7b-hf',
+            llama_path = 'meta-llama/Llama-2-13b-chat-hf',
             peft_path = None,
             prompt_path: str = 'examples/blocksworld/prompts/prompt.json',
             data_path: str = 'examples/blocksworld/data/step_4.json',
@@ -199,4 +199,4 @@ if __name__ == '__main__':
                lm_plan_file=lm_plan_file, **kwargs)
 
 
-    fire.Fire(llamacpp_main) # user will need to switch the model in the code
+    fire.Fire(llama_hf_main) # user will need to switch the model in the code

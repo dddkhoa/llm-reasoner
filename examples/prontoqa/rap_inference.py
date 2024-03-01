@@ -19,7 +19,7 @@ def create_directory_if_not_exists(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-def main(model_dir: str=  os.environ['LLAMA2_CKPTS'],
+def main(model_dir: str='TheBloke/Llama-2-13B-GGUF',
            mem_map: str = "[16, 22]",
            **search_algo_params):
     import numpy as np
@@ -64,3 +64,5 @@ if __name__ == '__main__':
 # CUDA_VISIBLE_DEVICES=0,1 python examples/prontoqa/rap_inference.py --mem_map "[16, 22]" --depth_limit 6 | tee debug_rap.log
     
 # CUDA_VISIBLE_DEVICES=0,1 python examples/prontoqa/rap_inference.py --mem_map "[16, 22]" --depth_limit 6 --w_exp 2 | tee debug_rap_2.log
+    
+# CUDA_VISIBLE_DEVICES=0 python examples/prontoqa/rap_inference.py --depth_limit 6 --mem_map "[16]" --w_exp 2 | tee debug_rap.log

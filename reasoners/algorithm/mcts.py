@@ -80,7 +80,7 @@ class MCTSAggregation(Generic[State, Action, Example], ABC):
     def __call__(self, tree_state: MCTSNode[State, Action, Example]) -> Optional[Hashable]:
         answer_dict = defaultdict(lambda: 0)
 
-        def visit(cur: MCTSNode[State, Action]):
+        def visit(cur: MCTSNode[State, Action, Example]):
             if cur.state is None:
                 return []
             if cur.is_terminal:

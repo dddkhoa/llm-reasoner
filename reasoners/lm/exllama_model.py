@@ -64,6 +64,7 @@ class ExLlamaModel(LanguageModel):
         model_path = glob.glob(st_pattern)[0]
 
         # Create config, model, tokenizer and generator
+        print(model_dir)
 
         self.config = ExLlamaConfig(model_config_path)  # create config from config.json
         self.config.model_path = model_path  # supply path to model weights file

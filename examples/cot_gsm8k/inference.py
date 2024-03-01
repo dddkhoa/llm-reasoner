@@ -1,4 +1,4 @@
-from reasoners.lm import ExLlamaModel
+from reasoners.lm import ExLlamaModel, HFModel
 import json
 from reasoners.benchmark import GSM8KEvaluator
 import utils
@@ -24,13 +24,13 @@ class CoTReasoner():
                                             eos_token_id=[13]).text
         return [o.strip() for o in outputs]
 
-def main(exllama_model_dir, exllama_lora_dir, exllama_mem_map, batch_size=1, prompt="examples/cot_gsm8k/prompts/cot.json", resume=0, log_dir=None, temperature=0.8, n_sc=1):
+def main(hf_path, hf_quantized, batch_size=1, prompt="examples/cot_gsm8k/prompts/cot.json", resume=0, log_dir=None, temperature=0.8, n_sc=1):
 
-    base_model = ExLlamaModel(exllama_model_dir, exllama_lora_dir,
-                          mem_map=exllama_mem_map, max_batch_size=batch_size,
-                          max_new_tokens=500, max_seq_length=2048)
-
-
+    # base_model = ExLlamaModel(exllama_model_dir, exllama_lora_dir,
+    #                       mem_map=exllama_mem_map, max_batch_size=batch_size,
+    #                       max_new_tokens=500, max_seq_length=2048)
+    base_model = HFModel(hf_path, hf_path, max_batch_size=batch_size, max_new_tokens=512, max_length=2048,
+                        peft_pth=None, quantized=hf_quantized, load_awq_pth=None)
     with open(prompt) as f:
         prompt = json.load(f)
 

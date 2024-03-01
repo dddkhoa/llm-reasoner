@@ -83,7 +83,7 @@ class GSM8kConfig(SearchConfig):
         # input(">")
 
         n_actions = 1 if at_depth_limit else self.n_actions
-        temperature = 0 if at_depth_limit else self.temperature
+        temperature = 0.0001 if at_depth_limit else self.temperature
         outputs = []
         for idx in range(0, n_actions, self.batch_size):
             n_samples = min(n_actions - idx, self.batch_size)

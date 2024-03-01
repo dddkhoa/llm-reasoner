@@ -95,7 +95,7 @@ class HFModel(LanguageModel):
         self.max_batch_size = max_batch_size
         self.max_length = max_length
         self.device = device
-        self.model = BetterTransformer.transform(self.model)
+        # self.model = BetterTransformer.transform(self.model)  # Transformers support natively BetterTransformer
         self.model.eval()
         # for old llama tokenizer's config, below is necessary
         self.model.config.pad_token_id = self.tokenizer.pad_token_id = 0  # unk
