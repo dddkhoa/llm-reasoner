@@ -1,0 +1,1 @@
+['examples/rap_gsm8k/inference.py', '--base_lm', 'hf', '--hf_path', 'meta-llama/Llama-2-13b-chat-hf', '--log_dir', 'logs/gsm8k_rap_v1.1', '--hf_quantized', 'nf4', '--n_action', '1', '--n_confidence', '1', '--n_iters', '1', '--temperature', '0.8', '--batch_size', '16']

@@ -1,0 +1,1 @@
+['examples/blocksworld/rap_inference.py', '--data_path', 'examples/blocksworld/data/split_v1/split_v1_step_4_data.json', '--depth_limit', '4', '--batch_size', '1', '--output_trace_in_each_iter', '--prompt_path', 'examples/blocksworld/prompts/pool_prompt_v1.json', '--log_dir', 'logs/v1_step4', '--n_iters', '3']

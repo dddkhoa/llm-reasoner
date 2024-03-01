@@ -2,7 +2,7 @@
 notebooks/
 __pycache__/
 *.egg-info/
-*.log
+# *.log
 *.egg-info/
 *.tmp
 .env
@@ -15,7 +15,7 @@ gpt-plan-benchmark/
 .vscode/
 dataset/
 *.jsonl
-*.txt
+# *.txt
 sas_plan
 build/
 temp_plan
